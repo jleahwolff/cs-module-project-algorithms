@@ -4,23 +4,20 @@ Returns: an integer
 '''
 def single_number(arr):
     # Your code here
-    #loop thru array
-    for num in range(len(arr)):
-        first_num = num
-        second_num = num + 1
-    #pick up one num
-    #if current number == next number, 
-        if first_num != second_num:
-            return num
-        else:
-            single_number(arr)
+    #create a new array for the list to live in
+    numbers = []
+    # loop thru array
+    for num in arr:
+        #put the numbers into the new array
+        if num not in numbers:
+            numbers.append(num)
+            #remove the number if its aready in the array
+        elif num in numbers:
+            numbers.remove(num)
+    #return the first number in the new array
+    return numbers[0]
 
-    return single_number(arr)
 
-    #restart the for loop
-
-    #else, return the number
-    
 
 
 if __name__ == '__main__':
